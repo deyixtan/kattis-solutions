@@ -14,7 +14,7 @@ public class Apaxiaaans {
         int prev = -1;
         int read_counter = 0;
         // looping through each character, comparing with prev char
-        // if same, then add to output
+        // if not the same, then add to output
         while ((curr = br.read()) != -1) {
             read_counter++;
             
