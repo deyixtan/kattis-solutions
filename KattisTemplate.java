@@ -5,35 +5,32 @@ public class KattisTemplate {
 
     public static void main(String args[]) throws Exception {
         // Fast IO
-        FastIO sc = new FastIO(System.in);
-        PrintWriter pw = new PrintWriter(new OutputStreamWriter(System.out));
+        FastIO io = new FastIO(System.in, System.out);
 
-        // Inputs
+        // Input
 
 
         // Logic
 
 
-        // Outputs
+        // Output
 
 
     }
 
     // ############################################################################
-    // ########################### Fast IO found online ###########################
+    // ##################### Fast IO found online (modified) ######################
     // https://github.com/MrinallU/USACO-java-fastIO/blob/master/NewIOtemplate.java
     // ############################################################################
     static class FastIO {
         InputStream dis;
+        PrintWriter pw;
         byte[] buffer = new byte[1 << 17];
         int pointer = 0;
 
-        public FastIO(String fileName) throws Exception {
-            dis = new FileInputStream(fileName);
-        }
-
-        public FastIO(InputStream is) throws Exception {
-            dis = is;
+        public FastIO(InputStream input, OutputStream output) throws Exception {
+            dis = input;
+            pw = new PrintWriter(new OutputStreamWriter(output));
         }
 
         int nextInt() throws Exception {
@@ -91,6 +88,22 @@ public class KattisTemplate {
                 b = nextByte();
             }
             return ret.toString();
+        }
+
+        void print(char text) {
+            pw.write(text);
+        }
+
+        void print(String text) {
+            pw.write(text);
+        }
+
+        void print(int value) {
+            pw.print(value);
+        }
+
+        void flushOutput() {
+            pw.flush();
         }
     }
 }
