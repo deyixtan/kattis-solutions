@@ -14,8 +14,7 @@ public class KattisTemplate {
 
 
         // Output
-
-
+        io.flushOutput();
     }
 
     // ############################################################################
@@ -75,6 +74,14 @@ public class KattisTemplate {
                 pointer = 0;
             }
             return buffer[pointer++];
+        }
+
+        char nextChar() throws Exception {
+            byte b;
+            do {
+                b = nextByte();
+            } while (b <= ' ');
+            return (char)b;
         }
         
         String next() throws Exception {
